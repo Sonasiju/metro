@@ -28,4 +28,4 @@ const ClusterCard = ({ cluster }) => {
   )
 }
 
-export default ClusterCard
+export default ClusterCard;
