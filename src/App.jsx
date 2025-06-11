@@ -1,8 +1,10 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Dashboard from './pages/Dashboard.jsx';
 import RouteSelection from './pages/RouteSelection.jsx';
+import MachineChart from './pages/MachineChart.jsx';
+import RouteAnalytics from './pages/RouteAnalytics.jsx';
 
 const clusters = [
   {
@@ -118,6 +120,11 @@ function App() {
           path="/cluster/:clusterId/machine/:machineId"
           element={<RouteSelection clusters={clusters} />}
         />
+        <Route
+          path="/analytics/:machineId/:routeName"
+          element={<RouteAnalytics />}
+        />
+        <Route path="/machine-chart" element={<MachineChart />} />
       </Routes>
     </BrowserRouter>
   );

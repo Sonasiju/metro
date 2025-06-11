@@ -23,10 +23,16 @@ const RouteSelection = ({ clusters }) => {
               <div className="card-body">
                 <span className="badge bg-info mb-2">•</span>
                 <h5 className="card-title text-dark">{rt}</h5>
-                <p className="small text-muted mb-2"><i className="bi bi-clock"></i> Live Data Available</p>
+                <p className="small text-muted mb-2">
+                  <i className="bi bi-clock"></i> Live Data Available
+                </p>
                 <button
                   className="btn btn-link p-0"
-                  onClick={() => alert(`Analytics: ${rt}`)}
+               onClick={() =>
+  nav(`/analytics/${encodeURIComponent(machine.id)}/${encodeURIComponent(rt)}`)
+
+}
+
                 >
                   Click to view analytics →
                 </button>
