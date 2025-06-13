@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -97,6 +98,7 @@ const clusters = [
           'Kalamassery MS - Medical College',
           'Medical College - Kalamassery MS',
           'Kalamassery MS - CUSAT',
+           
         ],
       },
       {
@@ -105,6 +107,7 @@ const clusters = [
           'Kalamassery MS - Medical College',
           'Medical College - Kalamassery MS',
           'Kalamassery MS - CUSAT',
+            "FACT - Kalamassery MS"
         ],
       },
     ],

@@ -107,18 +107,8 @@ const Dashboard = ({ clusters }) => {
 
       {/* Charts Section */}
       <div className="mt-5">
-        <h4>📊 Graph from data.csv</h4>
-        {csvData.length === 0 ? (
-          <p>No CSV data found.</p>
-        ) : (
-          <LineChart width={600} height={300} data={csvData}>
-            <XAxis dataKey="date" />
-            <YAxis />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Line type="monotone" dataKey="value" stroke="#8884d8" />
-          </LineChart>
-        )}
+        <h4>📊 Graph from data</h4>
+      
       </div>
 
       <div className="row mt-5">
@@ -159,26 +149,44 @@ const Dashboard = ({ clusters }) => {
           </PieChart>
         </div>
 
-        <div className="col-md-6">
-          <h5>👥 Passenger Category Distribution</h5>
-          <PieChart width={400} height={300}>
-            <Pie data={passengerCategoryData} dataKey="count" nameKey="category" cx="50%" cy="50%" outerRadius={100} label>
-              {passengerCategoryData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
+       <div className="col-md-6">
+          <h5>👥 Passenger Category Distribution (Bar Chart)</h5>
+          <BarChart
+            width={400}
+            height={300}
+            data={passengerCategoryData}
+            margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="category" />
+            <YAxis />
             <Tooltip />
-          </PieChart>
+            <Legend />
+            <Bar dataKey="count" fill="#8884d8" />
+          </BarChart>
         </div>
       </div>
 
-      <div className="mt-5">
+
+        <div className="mt-5">
         <h5>🛣 Revenue by Route</h5>
-        <BarChart width={1000} height={300} data={revenueByRouteData}>
+        <BarChart
+          width={1000}
+          height={400}
+          data={revenueByRouteData}
+          margin={{ top: 20, right: 30, left: 20, bottom: 80 }}
+        >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="route" interval={0} angle={-45} textAnchor="end" height={100} />
+          <XAxis
+            dataKey="route"
+            interval={0}
+            angle={-60}
+            textAnchor="end"
+            height={100}
+            tick={{ fontSize: 12 }}
+          />
           <YAxis />
-          <Tooltip />
+          <Tooltip formatter={(value) => `₹${value.toLocaleString()}`} />
           <Legend />
           <Bar dataKey="revenue" fill="#ffc658" />
         </BarChart>
