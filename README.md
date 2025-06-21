@@ -22,3 +22,18 @@ Charts	react-chartjs-2, chart.js
 Routing	React Router DOM
 Data	JSON + CSV parsing
 Optional Styling	Custom color palette with CSS variables
+
+📦 Installation & Run Locally
+
+# Clone the repo
+git clone https://github.com/your-username/metro-dashboard.git
+
+# Navigate to project
+cd metro-dashboard
+
+# Install dependencies
+npm install
+
+# Run locally
+npm run dev
+
