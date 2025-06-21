@@ -1,5 +1,5 @@
 ﻿# Metro-internship
- 🚌 Metro Revenue Dashboard
+# 🚌 Metro Revenue Dashboard
 A responsive web-based dashboard to visualize and analyze stop-wise revenue collections of metro routes. Built with React, Chart.js, and data from JSON/CSV files, this project enables clear insights into ticket counts, payment modes, and machine performance.
 
 🚀 Features
